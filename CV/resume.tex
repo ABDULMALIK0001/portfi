@@ -1,0 +1,164 @@
+\documentclass[letterpaper,9.5pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\usepackage[sfdefault]{roboto}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{4pt}{4pt}
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+\vspace{-1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingList}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=-2pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\begin{document}
+
+% ─── HEADER ───────────────────────────────────────────────
+\begin{center}
+  \textbf{\Huge ABDULMALIK BAJANDOUH} \\ \vspace{1pt}
+  \small Data Analyst \\ \vspace{1pt}
+  \small Saudi Arabia $|$ 0549760581 $|$
+  \href{mailto:abdulmalik.bajandouh@gmail.com}{abdulmalik.bajandouh@gmail.com} $|$
+  \href{https://linkedin.com/in/abdulmalik-bajandouh-b337b140a}{LinkedIn} $|$
+  \href{https://github.com/ABDULMALIK0001}{GitHub}
+\end{center}
+
+% ─── SUMMARY ──────────────────────────────────────────────
+\section*{Summary}
+Bachelor's candidate in Data Science with hands-on experience in Python, SQL, Power BI, and Machine Learning. Built end-to-end projects including an AI-powered health platform and automated dashboards, delivering actionable insights and supporting data-driven business decisions.
+
+% ─── SKILLS ───────────────────────────────────────────────
+\section{Skills}
+\resumeSubHeadingList
+  \resumeItem{\textbf{Programming:} Python, SQL}
+  \resumeItem{\textbf{Business Intelligence:} Power BI, Excel (VBA, Pivot Tables, Power Query)}
+  \resumeItem{\textbf{Data Analytics:} Data Cleaning, EDA, Data Visualization, KPI Reporting, Statistical Analysis}
+  \resumeItem{\textbf{Machine Learning:} Scikit-learn, Feature Engineering, Model Evaluation}
+  \resumeItem{\textbf{Data Modeling:} Star Schema, Relational Databases}
+  \resumeItem{\textbf{Tools:} Git, GitHub, Streamlit}
+\resumeSubHeadingListEnd
+
+% ─── PROJECTS ─────────────────────────────────────────────
+\section{Projects}
+\resumeSubHeadingList
+  \resumeSubheading
+      {VitaVision -- AI Nutrient-Deficiency Platform}{\href{https://github.com/ABDULMALIK0001/VitaVision_Project}{\small GitHub}}
+      {Python $|$ Scikit-learn $|$ Streamlit}{\href{https://www.vitavison.com}{\small Live App}}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Developed an end-to-end ML platform to detect deficiencies across 12 vitamins and minerals using a Random Forest model trained on NHANES data, achieving \textbf{91\% prediction accuracy}}
+          \resumeItem{\textbullet\ Engineered the full pipeline (data cleaning, feature engineering, model evaluation) and deployed an interactive Streamlit interface for non-technical users}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Sales Performance Dashboard}{}
+      {Power BI $|$ Power Query $|$ DAX $|$ Excel}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Built an interactive dashboard transforming retail sales data into actionable insights, identifying that Electronics and Fashion drove over 45\% of total revenue}
+          \resumeItem{\textbullet\ Analyzed branch performance and payment method trends to surface expansion opportunities for stakeholders}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {HR Analytics Dashboard}{}
+      {Power BI $|$ Power Query}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Designed a workforce analytics dashboard uncovering attrition patterns; found Sales dept.\ had 21\% attrition rate -- nearly double the company average}
+          \resumeItem{\textbullet\ Identified employees with under 1 year of tenure were 5$\times$ more likely to leave, enabling targeted retention strategies}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Financial Analysis Dashboard}{}
+      {Power BI $|$ Power Query $|$ DAX}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Built a consolidated dashboard bringing revenue, expenses, profitability, and cash flow into a single reporting view across 6 branches}
+          \resumeItem{\textbullet\ Revealed Salaries \& Benefits as the largest cost driver at {\textasciitilde}42\% of total operating expenses}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Profitability \& Collections Dashboard}{}
+      {Power BI}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Designed a star-schema data model over a 3,000-row financial dataset to track profitability, collections, and KPIs}
+          \resumeItem{\textbullet\ Implemented interactive reports that surface trends and support data-driven decisions for stakeholders}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Automated Sales \& Target Performance Dashboard}{}
+      {Excel $|$ VBA}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Automated the full reporting process using VBA macros, generating pivot tables, KPI cards, 5 charts, and slicers from raw sales data in one click}
+          \resumeItem{\textbullet\ Optimized data-cleaning routines to eliminate manual effort and improve report reliability}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Sales Data Analysis}{}
+      {Python $|$ pandas, Matplotlib}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Analyzed online store sales data to identify revenue trends, seasonal patterns, and customer behavior through data cleaning and EDA}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+% ─── EXPERIENCE ───────────────────────────────────────────
+\section{Experience}
+\resumeSubHeadingList
+  \resumeSubheading
+      {Data Operations -- Trainee}{Mar 2025 -- Jul 2025}
+      {Cart Project, Umm Al-Qura University}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Executed data entry and validation tasks maintaining high data accuracy; improved task organization and workflow efficiency}
+      \resumeSubHeadingListEnd
+  \resumeSubheading
+      {Catering Supervisor -- Seasonal}{2024 -- 2025}
+      {Hajj Season}{}
+      \resumeSubHeadingList
+          \resumeItem{\textbullet\ Managed food-distribution operations under high-pressure conditions, ensuring compliance with safety standards}
+      \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
+
+% ─── EDUCATION ────────────────────────────────────────────
+\section{Education}
+\resumeSubHeadingList
+  \resumeSubheading
+      {Umm Al-Qura University}{Sep 2022 -- May 2026}
+      {Bachelor of Data Science $|$ Expected May 2026}{}
+\resumeSubHeadingListEnd
+
+% ─── CERTIFICATIONS & LANGUAGES ───────────────────────────
+\section{Certifications \& Languages}
+\resumeSubHeadingList
+  \resumeItem{\textbf{Certifications:} What is Data Science -- IBM $|$ Cloud Computing Fundamentals -- IBM SkillsBuild (Mar 2026)}
+  \resumeItem{\textbf{Languages:} Arabic (Native), English (Intermediate)}
+\resumeSubHeadingListEnd
+
+\end{document}
