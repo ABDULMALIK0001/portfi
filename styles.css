@@ -997,24 +997,6 @@ nav {
   transform: scale(1.035);
 }
 
-.analytics-card-number {
-  position: absolute;
-  top: 13px;
-  left: 13px;
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 10px;
-  background: rgba(8, 74, 88, 0.88);
-  color: #fff;
-  font-family: 'Manrope', sans-serif;
-  font-size: 10px;
-  font-weight: 800;
-  backdrop-filter: blur(10px);
-}
-
 .analytics-card-body {
   display: flex;
   min-height: 239px;
