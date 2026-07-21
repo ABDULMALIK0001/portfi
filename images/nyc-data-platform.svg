@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="400" viewBox="0 0 680 400" role="img" aria-labelledby="title desc">
+  <title id="title">NYC Transportation Data Platform architecture</title>
+  <desc id="desc">Taxi, weather, and zone datasets orchestrated by Airflow and processed with Spark before storage and modeling with MinIO, PostgreSQL, and dbt.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#54c4d3"/>
+    </marker>
+  </defs>
+
+  <rect width="680" height="400" rx="24" fill="#071a2b"/>
+  <g stroke="#18334a" stroke-width="1" opacity="0.72">
+    <path d="M0 72h680M0 144h680M0 216h680M0 288h680M0 360h680"/>
+    <path d="M80 0v400M160 0v400M240 0v400M320 0v400M400 0v400M480 0v400M560 0v400M640 0v400"/>
+  </g>
+
+  <circle cx="38" cy="38" r="11" fill="#f4c44e"/>
+  <path d="M32 38h12M38 32v12" stroke="#071a2b" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="58" y="35" fill="#f7fbff" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">NYC TRIP PIPELINE</text>
+  <text x="58" y="53" fill="#7795aa" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="600" letter-spacing="1.5">BATCH DATA ENGINEERING</text>
+
+  <rect x="445" y="22" width="202" height="42" rx="11" fill="#0e2b40" stroke="#25506a"/>
+  <circle cx="468" cy="43" r="7" fill="#39b9ca" opacity="0.22"/>
+  <path d="M464 43h8M468 39v8" stroke="#63d2df" stroke-width="1.7" stroke-linecap="round"/>
+  <text x="484" y="40" fill="#d9f7fb" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700">AIRFLOW ORCHESTRATION</text>
+  <text x="484" y="53" fill="#7795aa" font-family="Inter,Arial,sans-serif" font-size="9">Scheduled end-to-end DAG</text>
+
+  <text x="34" y="101" fill="#7795aa" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1.4">SOURCE DATA</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="32" y="113" width="154" height="48" rx="11" fill="#102b40" stroke="#294861"/>
+    <circle cx="54" cy="137" r="9" fill="#f4c44e" opacity="0.18"/>
+    <path d="M49 138h10l-1.5-5h-7zM51 138v4M57 138v4" fill="none" stroke="#f4c44e" stroke-width="1.4" stroke-linecap="round"/>
+    <text x="72" y="134" fill="#eef7fb" font-size="11" font-weight="700">NYC TLC PARQUET</text>
+    <text x="72" y="148" fill="#7795aa" font-size="9">Yellow taxi trips</text>
+
+    <rect x="32" y="174" width="154" height="48" rx="11" fill="#102b40" stroke="#294861"/>
+    <circle cx="54" cy="198" r="9" fill="#49a8e8" opacity="0.18"/>
+    <path d="M49 199c2-5 8-5 10 0M54 191v3M47 194l2 2M61 194l-2 2" fill="none" stroke="#67bdf4" stroke-width="1.4" stroke-linecap="round"/>
+    <text x="72" y="195" fill="#eef7fb" font-size="11" font-weight="700">WEATHER JSON</text>
+    <text x="72" y="209" fill="#7795aa" font-size="9">Open-Meteo API</text>
+
+    <rect x="32" y="235" width="154" height="48" rx="11" fill="#102b40" stroke="#294861"/>
+    <circle cx="54" cy="259" r="9" fill="#a8bbca" opacity="0.16"/>
+    <path d="M50 253h8v12h-8zM52 256h4M52 259h4M52 262h4" fill="none" stroke="#b7cad8" stroke-width="1.2"/>
+    <text x="72" y="256" fill="#eef7fb" font-size="11" font-weight="700">TAXI ZONES CSV</text>
+    <text x="72" y="270" fill="#7795aa" font-size="9">Location reference</text>
+  </g>
+
+  <path d="M194 198h48" stroke="#54c4d3" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M206 137v122" stroke="#2f6077" stroke-width="1.2" stroke-dasharray="4 5"/>
+
+  <rect x="253" y="128" width="150" height="139" rx="18" fill="#0e3144" stroke="#2d6377" stroke-width="1.5"/>
+  <circle cx="328" cy="168" r="24" fill="#e56139" opacity="0.16"/>
+  <path d="M313 176c8-20 17-24 30-21-8 3-13 8-14 16 6-5 12-5 18-2-10 2-16 7-19 15-3-5-8-7-15-8z" fill="#f17a51"/>
+  <text x="328" y="213" text-anchor="middle" fill="#f7fbff" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="800">APACHE SPARK</text>
+  <text x="328" y="232" text-anchor="middle" fill="#8eb1c3" font-family="Inter,Arial,sans-serif" font-size="10">Clean · join · validate</text>
+  <rect x="278" y="244" width="100" height="25" rx="12.5" fill="#173e50"/>
+  <text x="328" y="261" text-anchor="middle" fill="#8fe0e8" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="700">2.98M TRIPS</text>
+
+  <path d="M411 198h42" stroke="#54c4d3" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="464" y="106" width="181" height="61" rx="13" fill="#102b40" stroke="#294861"/>
+    <rect x="480" y="121" width="31" height="31" rx="8" fill="#39b9ca" opacity="0.16"/>
+    <path d="M487 129h17v15h-17zM487 134h17" fill="none" stroke="#65d1dc" stroke-width="1.3"/>
+    <text x="525" y="132" fill="#eef7fb" font-size="12" font-weight="700">MINIO DATA LAKE</text>
+    <text x="525" y="148" fill="#7795aa" font-size="9">Raw and refined assets</text>
+
+    <rect x="464" y="180" width="181" height="61" rx="13" fill="#102b40" stroke="#294861"/>
+    <rect x="480" y="195" width="31" height="31" rx="8" fill="#4d83e5" opacity="0.17"/>
+    <ellipse cx="495.5" cy="202" rx="8" ry="3" fill="none" stroke="#79a7ff" stroke-width="1.3"/>
+    <path d="M487.5 202v10c0 1.7 3.6 3 8 3s8-1.3 8-3v-10M487.5 207c0 1.7 3.6 3 8 3s8-1.3 8-3" fill="none" stroke="#79a7ff" stroke-width="1.3"/>
+    <text x="525" y="206" fill="#eef7fb" font-size="12" font-weight="700">POSTGRESQL</text>
+    <text x="525" y="222" fill="#7795aa" font-size="9">Analytics star schema</text>
+
+    <rect x="464" y="254" width="181" height="61" rx="13" fill="#102b40" stroke="#294861"/>
+    <rect x="480" y="269" width="31" height="31" rx="8" fill="#f08b62" opacity="0.16"/>
+    <path d="M487 284l5 5 11-12" fill="none" stroke="#f39a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="525" y="280" fill="#eef7fb" font-size="12" font-weight="700">DBT MODELS</text>
+    <text x="525" y="296" fill="#7795aa" font-size="9">47 successful checks</text>
+  </g>
+
+  <rect x="32" y="329" width="613" height="43" rx="13" fill="#0c2638" stroke="#23475e"/>
+  <text x="53" y="346" fill="#7795aa" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1.1">RELIABILITY</text>
+  <text x="53" y="362" fill="#d8e8f0" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700">18 Python tests</text>
+  <circle cx="201" cy="351" r="3" fill="#39b9ca"/>
+  <text x="216" y="355" fill="#d8e8f0" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700">Rejected-row quarantine</text>
+  <circle cx="414" cy="351" r="3" fill="#39b9ca"/>
+  <text x="429" y="355" fill="#d8e8f0" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700">Dockerized platform</text>
+</svg>
