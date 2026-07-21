@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="400" viewBox="0 0 680 400" role="img" aria-labelledby="title desc">
+  <title id="title">SpendFlow Data Platform architecture</title>
+  <desc id="desc">Bank and wallet events move through audited ingestion, Bronze, Silver, and Gold data layers with automated quality checks and continuous integration.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0l10 5-10 5z" fill="#67cfaa"/>
+    </marker>
+  </defs>
+
+  <rect width="680" height="400" rx="24" fill="#082822"/>
+  <g stroke="#17453b" stroke-width="1" opacity="0.7">
+    <path d="M0 80h680M0 160h680M0 240h680M0 320h680"/>
+    <path d="M85 0v400M170 0v400M255 0v400M340 0v400M425 0v400M510 0v400M595 0v400"/>
+  </g>
+
+  <rect x="27" y="25" width="32" height="32" rx="10" fill="#e8b763"/>
+  <path d="M35 41h16M38 37h10M38 45h10" stroke="#082822" stroke-width="2" stroke-linecap="round"/>
+  <text x="72" y="38" fill="#f3fff9" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">SPENDFLOW</text>
+  <text x="72" y="55" fill="#82aa9d" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="600" letter-spacing="1.5">RELIABLE FINANCE DATA PLATFORM</text>
+
+  <rect x="458" y="23" width="188" height="42" rx="11" fill="#103a31" stroke="#2d6757"/>
+  <circle cx="481" cy="44" r="8" fill="#68cfaa" opacity="0.18"/>
+  <path d="M476 44l3 3 7-8" fill="none" stroke="#82dfbd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="497" y="41" fill="#def8ee" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700">GITHUB ACTIONS CI</text>
+  <text x="497" y="54" fill="#82aa9d" font-family="Inter,Arial,sans-serif" font-size="9">Tests every change</text>
+
+  <text x="30" y="105" fill="#82aa9d" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1.4">MULTI-SOURCE EVENTS</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="28" y="119" width="145" height="65" rx="14" fill="#113b32" stroke="#2b6354"/>
+    <circle cx="53" cy="151" r="12" fill="#6aa7ff" opacity="0.17"/>
+    <path d="M45 148h16M47 148v9M52 148v9M57 148v9M44 157h18M53 141l9 5H44z" fill="none" stroke="#83b6ff" stroke-width="1.4" stroke-linejoin="round"/>
+    <text x="75" y="148" fill="#effcf7" font-size="12" font-weight="700">BANK CSV</text>
+    <text x="75" y="164" fill="#82aa9d" font-size="9">Account activity</text>
+
+    <rect x="28" y="198" width="145" height="65" rx="14" fill="#113b32" stroke="#2b6354"/>
+    <circle cx="53" cy="230" r="12" fill="#e8b763" opacity="0.18"/>
+    <rect x="45" y="224" width="17" height="13" rx="3" fill="none" stroke="#efc879" stroke-width="1.4"/>
+    <path d="M57 228h5v5h-5" fill="none" stroke="#efc879" stroke-width="1.4"/>
+    <text x="75" y="227" fill="#effcf7" font-size="12" font-weight="700">WALLET CSV</text>
+    <text x="75" y="243" fill="#82aa9d" font-size="9">Payment activity</text>
+  </g>
+
+  <path d="M181 190h46" stroke="#67cfaa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="238" y="126" width="150" height="138" rx="18" fill="#103d33" stroke="#347361" stroke-width="1.5"/>
+  <circle cx="313" cy="163" r="22" fill="#67cfaa" opacity="0.14"/>
+  <path d="M302 163h22M306 157h14M306 169h14" stroke="#81dfbd" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="313" y="204" text-anchor="middle" fill="#f3fff9" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800">AUDITED INGESTION</text>
+  <text x="313" y="223" text-anchor="middle" fill="#8bb4a6" font-family="Inter,Arial,sans-serif" font-size="9.5">Idempotent · SHA-256</text>
+  <rect x="263" y="237" width="100" height="24" rx="12" fill="#194b40"/>
+  <text x="313" y="253" text-anchor="middle" fill="#9fe5cb" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700">AIRFLOW</text>
+
+  <path d="M396 190h34" stroke="#67cfaa" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="441" y="100" width="69" height="125" rx="14" fill="#6c4a32" stroke="#b68055"/>
+    <circle cx="475.5" cy="132" r="15" fill="#e0a36d" opacity="0.2"/>
+    <text x="475.5" y="137" text-anchor="middle" fill="#f2be88" font-size="15" font-weight="800">B</text>
+    <text x="475.5" y="172" text-anchor="middle" fill="#fff2e6" font-size="10" font-weight="800">BRONZE</text>
+    <text x="475.5" y="189" text-anchor="middle" fill="#d6af90" font-size="8.5">Raw files</text>
+
+    <rect x="518" y="100" width="69" height="125" rx="14" fill="#334c49" stroke="#68837e"/>
+    <circle cx="552.5" cy="132" r="15" fill="#b9cdca" opacity="0.16"/>
+    <text x="552.5" y="137" text-anchor="middle" fill="#d8e6e3" font-size="15" font-weight="800">S</text>
+    <text x="552.5" y="172" text-anchor="middle" fill="#effaf7" font-size="10" font-weight="800">SILVER</text>
+    <text x="552.5" y="189" text-anchor="middle" fill="#a6bfba" font-size="8.5">Clean events</text>
+
+    <rect x="595" y="100" width="58" height="125" rx="14" fill="#665126" stroke="#ad8b3d"/>
+    <circle cx="624" cy="132" r="15" fill="#e8b763" opacity="0.18"/>
+    <text x="624" y="137" text-anchor="middle" fill="#f3ca78" font-size="15" font-weight="800">G</text>
+    <text x="624" y="172" text-anchor="middle" fill="#fff8e9" font-size="10" font-weight="800">GOLD</text>
+    <text x="624" y="189" text-anchor="middle" fill="#d8c38f" font-size="8.5">Analytics</text>
+  </g>
+
+  <path d="M510 163h8M587 163h8" stroke="#67cfaa" stroke-width="1.7" marker-end="url(#arrow)"/>
+
+  <rect x="441" y="244" width="212" height="48" rx="13" fill="#103a31" stroke="#2d6757"/>
+  <path d="M458 268l5 5 10-12" fill="none" stroke="#82dfbd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="483" y="264" fill="#effcf7" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700">DBT QUALITY LAYER</text>
+  <text x="483" y="279" fill="#82aa9d" font-family="Inter,Arial,sans-serif" font-size="9">39 tests · rejected records · deduplication</text>
+
+  <rect x="28" y="313" width="625" height="58" rx="15" fill="#0e352d" stroke="#285c4e"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="49" y="334" fill="#82aa9d" font-size="9" font-weight="700" letter-spacing="1.1">PIPELINE RESULTS</text>
+    <text x="49" y="355" fill="#f0fbf7" font-size="12" font-weight="800">10,000 events</text>
+    <circle cx="175" cy="350" r="3" fill="#67cfaa"/>
+    <text x="190" y="355" fill="#f0fbf7" font-size="12" font-weight="800">400 duplicates caught</text>
+    <circle cx="371" cy="350" r="3" fill="#67cfaa"/>
+    <text x="386" y="355" fill="#f0fbf7" font-size="12" font-weight="800">Recurring payments</text>
+    <circle cx="527" cy="350" r="3" fill="#67cfaa"/>
+    <text x="542" y="355" fill="#f0fbf7" font-size="12" font-weight="800">Metabase</text>
+  </g>
+</svg>
