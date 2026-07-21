@@ -1077,8 +1077,8 @@ body.dialog-open {
 .case-dialog {
   position: fixed;
   inset: 0;
-  width: min(1000px, calc(100vw - 48px));
-  max-width: 1000px;
+  width: min(1100px, calc(100vw - 48px));
+  max-width: 1100px;
   max-height: calc(100vh - 48px);
   max-height: calc(100dvh - 48px);
   margin: auto;
@@ -1145,30 +1145,64 @@ body.dialog-open {
 
 .case-dialog-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-  min-height: 620px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+  min-height: 0;
 }
 
 .case-dialog-media {
+  position: sticky;
+  top: 0;
   display: flex;
   min-width: 0;
-  min-height: 100%;
-  align-items: center;
-  justify-content: center;
+  min-height: 0;
+  align-self: start;
+  align-items: stretch;
+  gap: 15px;
   margin: 0;
-  padding: 28px;
+  padding: 25px;
+  flex-direction: column;
   border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   background: #eaf0f2;
+}
+
+.case-dialog-media-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--primary-dark);
+}
+
+.case-dialog-media-label span {
+  flex-shrink: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-dialog-media-label small {
+  color: var(--muted);
+  font-size: 9.5px;
+  line-height: 1.4;
+  text-align: right;
 }
 
 .case-dialog-media img {
   width: 100%;
-  max-height: 590px;
+  max-height: none;
+  border: 1px solid rgba(19, 33, 45, 0.09);
+  border-radius: 12px;
+  background: #fff;
   object-fit: contain;
+  box-shadow: 0 14px 34px rgba(18, 47, 59, 0.1);
 }
 
 .case-dialog-content {
-  padding: 46px 44px 42px;
+  padding: 44px 40px 40px;
 }
 
 .case-dialog-index {
@@ -1182,7 +1216,7 @@ body.dialog-open {
 }
 
 .case-dialog-content > h3 {
-  max-width: 420px;
+  max-width: 480px;
   margin-bottom: 25px;
   font-size: clamp(1.6rem, 3vw, 2.25rem);
   line-height: 1.18;
@@ -1520,7 +1554,9 @@ footer {
   }
 
   .case-dialog-media {
-    min-height: 330px;
+    position: static;
+    min-height: 0;
+    padding: 22px;
     border-right: 0;
     border-bottom: 1px solid var(--border);
   }
@@ -1614,8 +1650,18 @@ footer {
   }
 
   .case-dialog-media {
-    min-height: 230px;
-    padding: 18px;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .case-dialog-media-label {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .case-dialog-media-label small {
+    text-align: left;
   }
 
   .case-dialog-content {
