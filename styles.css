@@ -576,9 +576,10 @@ nav {
 
 .journey-figure {
   position: relative;
-  display: block;
+  display: grid;
   width: 102px;
   height: 102px;
+  place-items: center;
   border: 1px solid var(--border);
   border-radius: 50%;
   background: #f8fbfc;
@@ -609,138 +610,14 @@ nav {
   color: var(--primary-dark);
 }
 
-.figure-ask i {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: 'Manrope', sans-serif;
-  font-size: 39px;
-  font-style: normal;
-  font-weight: 700;
-}
-
-.figure-collect i {
-  position: absolute;
-  left: 28px;
-  width: 46px;
-  height: 17px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-}
-
-.figure-collect i:nth-child(1) { top: 27px; }
-.figure-collect i:nth-child(2) { top: 42px; }
-.figure-collect i:nth-child(3) { top: 57px; }
-
-.figure-prepare i {
-  position: absolute;
-  left: 29px;
-  height: 7px;
-  border-radius: 99px;
-  background: currentColor;
-}
-
-.figure-prepare i::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid #f8fbfc;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.journey-step.is-active .figure-prepare i::before,
-.journey-step:hover .figure-prepare i::before {
-  border-color: var(--primary);
-}
-
-.figure-prepare i:nth-child(1) { top: 29px; width: 45px; }
-.figure-prepare i:nth-child(1)::before { left: 7px; }
-.figure-prepare i:nth-child(2) { top: 47px; width: 45px; }
-.figure-prepare i:nth-child(2)::before { right: 6px; }
-.figure-prepare i:nth-child(3) { top: 65px; width: 34px; }
-.figure-prepare i:nth-child(3)::before { left: 13px; }
-
-.figure-explore::before {
-  content: '';
-  position: absolute;
-  top: 52px;
-  left: 25px;
-  width: 54px;
-  height: 2px;
-  background: currentColor;
-  transform: rotate(-25deg);
-  transform-origin: center;
-}
-
-.figure-explore i {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border: 2px solid #f8fbfc;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.journey-step.is-active .figure-explore i,
-.journey-step:hover .figure-explore i {
-  border-color: var(--primary);
-}
-
-.figure-explore i:nth-child(1) { top: 62px; left: 24px; }
-.figure-explore i:nth-child(2) { top: 47px; left: 39px; }
-.figure-explore i:nth-child(3) { top: 54px; left: 55px; }
-.figure-explore i:nth-child(4) { top: 30px; left: 70px; }
-
-.figure-explain::before {
-  content: '';
-  position: absolute;
-  inset: 24px 24px 25px;
-  border: 2px solid currentColor;
-  border-radius: 7px;
-}
-
-.figure-explain i {
-  position: absolute;
-  bottom: 31px;
-  width: 9px;
-  border-radius: 3px 3px 0 0;
-  background: currentColor;
-}
-
-.figure-explain i:nth-child(1) { left: 34px; height: 17px; }
-.figure-explain i:nth-child(2) { left: 47px; height: 29px; }
-.figure-explain i:nth-child(3) { left: 60px; height: 38px; }
-
-.figure-decide::before,
-.figure-decide::after {
-  content: '';
-  position: absolute;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-}
-
-.figure-decide::before { inset: 23px; }
-.figure-decide::after { inset: 35px; }
-
-.figure-decide i {
-  position: absolute;
-  z-index: 1;
-  top: 44px;
-  left: 44px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid #f8fbfc;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.journey-step.is-active .figure-decide i,
-.journey-step:hover .figure-decide i {
-  border-color: var(--primary);
+.journey-icon {
+  width: 44px;
+  height: 44px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .journey-detail {
@@ -939,6 +816,17 @@ nav {
 
 .proj-link:hover {
   border-bottom-color: currentColor;
+}
+
+.proj-github-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .analytics-card-grid {
