@@ -199,7 +199,7 @@
     .hero-meta{gap:24px}
   }
 </style>
-<link rel="stylesheet" href="styles.css?v=20260722-4">
+<link rel="stylesheet" href="styles.css?v=20260722-5">
 </head>
 <body>
 
@@ -1021,6 +1021,7 @@
   if (dataCanvas) {
     const context = dataCanvas.getContext('2d');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const desktopCanvas = window.matchMedia('(min-width: 901px)');
     const scatteredPoints = [
       [0.08, 0.22, 3.2], [0.16, 0.61, 4.2], [0.22, 0.36, 2.7],
       [0.27, 0.76, 3.5], [0.31, 0.17, 2.4], [0.35, 0.52, 4.6],
@@ -1032,6 +1033,8 @@
     let pixelRatio = 1;
     let canvasWidth = 0;
     let canvasHeight = 0;
+    let animationFrameId = null;
+    let animationRunning = false;
 
     const sizeCanvas = () => {
       const bounds = dataCanvas.getBoundingClientRect();
@@ -1044,6 +1047,8 @@
     };
 
     const drawDataArt = (time) => {
+      animationFrameId = null;
+      if (!reducedMotion && !animationRunning) return;
       context.clearRect(0, 0, canvasWidth, canvasHeight);
       const drift = reducedMotion ? 0 : Math.sin((time - startTime) / 1500) * 2.2;
       const trendStart = canvasWidth * 0.37;
@@ -1128,17 +1133,45 @@
         context.fill();
       });
 
-      if (!reducedMotion) requestAnimationFrame(drawDataArt);
+      if (!reducedMotion && animationRunning) {
+        animationFrameId = requestAnimationFrame(drawDataArt);
+      }
     };
 
-    sizeCanvas();
-    if (reducedMotion) drawDataArt(startTime);
-    else requestAnimationFrame(drawDataArt);
+    const syncCanvasAnimation = () => {
+      const shouldRender = desktopCanvas.matches && !document.hidden;
+      if (!shouldRender) {
+        animationRunning = false;
+        if (animationFrameId !== null) cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+        return;
+      }
+
+      sizeCanvas();
+      if (reducedMotion) {
+        drawDataArt(startTime);
+      } else if (!animationRunning) {
+        animationRunning = true;
+        animationFrameId = requestAnimationFrame(drawDataArt);
+      }
+    };
+
+    syncCanvasAnimation();
+    document.addEventListener('visibilitychange', syncCanvasAnimation);
+    if (typeof desktopCanvas.addEventListener === 'function') {
+      desktopCanvas.addEventListener('change', syncCanvasAnimation);
+    } else {
+      desktopCanvas.addListener(syncCanvasAnimation);
+    }
 
     if ('ResizeObserver' in window) {
-      new ResizeObserver(sizeCanvas).observe(dataCanvas);
+      new ResizeObserver(() => {
+        if (desktopCanvas.matches) sizeCanvas();
+      }).observe(dataCanvas);
     } else {
-      window.addEventListener('resize', sizeCanvas, {passive:true});
+      window.addEventListener('resize', () => {
+        if (desktopCanvas.matches) sizeCanvas();
+      }, {passive:true});
     }
   }
 </script>

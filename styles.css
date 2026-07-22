@@ -16,6 +16,8 @@
 
 html {
   scroll-padding-top: 78px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -38,6 +40,9 @@ a:focus-visible {
   top: 12px;
   left: 12px;
   z-index: 500;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   transform: translateY(-160%);
   padding: 10px 14px;
   border-radius: 8px;
@@ -56,11 +61,13 @@ nav {
   height: 72px;
   background: rgba(247, 249, 251, 0.88);
   border-bottom-color: rgba(223, 231, 235, 0.82);
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
 
 .nav-brand {
   display: inline-flex;
+  min-height: 44px;
   align-items: center;
   gap: 11px;
   font-size: 14px;
@@ -113,6 +120,10 @@ nav {
 }
 
 .nav-cta {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
   padding: 10px 18px;
   border-radius: 10px;
   background: var(--text);
@@ -127,8 +138,8 @@ nav {
 
 .nav-toggle {
   display: none;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 11px;
@@ -219,6 +230,7 @@ nav {
   border-color: rgba(13, 101, 119, 0.18);
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 6px 20px rgba(13, 101, 119, 0.06);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -811,6 +823,9 @@ nav {
 }
 
 .proj-link {
+  min-height: 44px;
+  padding: 8px 0;
+  align-items: center;
   border-bottom: 1px solid transparent;
 }
 
@@ -962,6 +977,7 @@ body.dialog-open {
 
 .case-dialog::backdrop {
   background: rgba(7, 24, 31, 0.68);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
@@ -1271,8 +1287,17 @@ body.dialog-open {
 }
 
 .contact-card {
+  min-width: 0;
   border-radius: 13px;
   transition: background 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+
+.contact-card-info {
+  min-width: 0;
+}
+
+.contact-card-sub {
+  overflow-wrap: anywhere;
 }
 
 .contact-card:hover {
@@ -1395,12 +1420,12 @@ footer {
 
   .hero {
     min-height: auto;
-    padding: 132px 0 88px;
+    padding: 116px 0 72px;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 54px;
+    gap: 0;
   }
 
   .hero-copy {
@@ -1408,14 +1433,91 @@ footer {
   }
 
   .hero-visual {
-    display: block;
-    width: min(100%, 620px);
-    min-height: 445px;
-    margin: 0 auto;
+    display: none;
   }
 
   .skills-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .process-visual {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .process-journey-scroll {
+    overflow: visible;
+  }
+
+  .process-journey {
+    min-width: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0;
+  }
+
+  .process-journey::before {
+    display: none;
+  }
+
+  .journey-step {
+    display: flex;
+    min-width: 0;
+    min-height: 68px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 11px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #f8fbfc;
+    text-align: left;
+  }
+
+  .journey-step.is-active {
+    border-color: rgba(13, 101, 119, 0.44);
+    background: #eef7f8;
+  }
+
+  .journey-step:focus-visible {
+    outline-offset: 2px;
+  }
+
+  .journey-figure {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .journey-step:hover .journey-figure,
+  .journey-step.is-active .journey-figure {
+    box-shadow: none;
+    transform: none;
+  }
+
+  .journey-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .journey-label {
+    min-width: 0;
+    font-size: 11.5px;
+    letter-spacing: 0.01em;
+  }
+
+  .journey-detail {
+    min-height: 0;
+    margin-top: 12px;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .footer-link {
+    width: 44px;
+    height: 44px;
   }
 
   .case-dialog-grid {
@@ -1435,28 +1537,113 @@ footer {
 @media (max-width: 720px) {
   .wrap,
   .nav-inner {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 18px;
+    padding-left: 18px;
   }
 
   .nav-brand > span:last-child {
     display: none;
   }
 
+  .nav-brand {
+    min-width: 44px;
+    justify-content: center;
+  }
+
   .hero {
-    padding-top: 118px;
+    padding: 104px 0 64px;
+  }
+
+  .hero::before {
+    top: 54px;
+    right: -210px;
+    width: 360px;
+    height: 360px;
+    border-width: 78px;
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
+    padding: 7px 12px;
+    font-size: 10.5px;
+  }
+
+  .hero-intro {
+    font-size: 14px;
   }
 
   .hero h1 {
-    font-size: clamp(2.75rem, 15vw, 4rem);
+    font-size: clamp(2.55rem, 13.5vw, 3.85rem);
+  }
+
+  .hero-role {
+    margin-top: 18px;
+    font-size: 1.03rem;
+    line-height: 1.5;
+  }
+
+  .hero-sub {
+    margin-top: 12px;
+    font-size: 14.5px;
+    line-height: 1.72;
+  }
+
+  .hero-cta {
+    gap: 10px;
+    margin-top: 24px;
   }
 
   .hero-proof {
-    gap: 10px 15px;
+    gap: 9px 14px;
+    margin-top: 24px;
   }
 
   .section {
-    padding: 82px 0;
+    padding: 68px 0;
+  }
+
+  .section-head,
+  #about .section-head {
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: clamp(1.9rem, 9vw, 2.4rem);
+  }
+
+  .section-desc {
+    margin-top: 12px;
+    font-size: 14.5px;
+    line-height: 1.72;
+  }
+
+  .about-grid {
+    gap: 27px;
+  }
+
+  .about-text p {
+    margin-bottom: 14px;
+    font-size: 14.5px;
+    line-height: 1.78;
+  }
+
+  .about-principle {
+    min-height: 0;
+    padding: 26px 24px;
+    border-radius: 18px;
+  }
+
+  .principle-mark {
+    margin-bottom: 20px;
+  }
+
+  .about-principle p {
+    font-size: clamp(1.08rem, 5vw, 1.32rem);
+    line-height: 1.5;
   }
 
   .skills-grid,
@@ -1467,18 +1654,181 @@ footer {
 
   .analytics-card-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .proj-img {
-    height: 230px;
+    height: 210px;
+  }
+
+  .proj-grid {
+    gap: 18px;
+  }
+
+  .proj-content {
+    padding: 21px 21px 23px;
+  }
+
+  .proj-grid + .group-header,
+  .case-dialog + .group-header {
+    margin-top: 58px;
+  }
+
+  .group-header {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .group-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .group-title {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+
+  .group-sub {
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+
+  .analytics-card {
+    min-height: 0;
+  }
+
+  .analytics-card-media {
+    height: 180px;
+  }
+
+  .analytics-card-body {
+    min-height: 0;
+    padding: 21px 20px 19px;
+  }
+
+  .analytics-card-open {
+    min-height: 44px;
+    margin-top: 18px;
+    padding-top: 14px;
+  }
+
+  .skills-grid {
+    gap: 12px;
+  }
+
+  .skill-card {
+    min-height: 0;
+    padding: 21px;
+  }
+
+  .skill-cat {
+    margin-bottom: 16px;
   }
 
   .process-visual {
-    padding: 23px 20px 20px;
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .process-journey-scroll {
+    overflow: visible;
+  }
+
+  .process-journey {
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    padding: 0;
+  }
+
+  .process-journey::before {
+    display: none;
+  }
+
+  .journey-step {
+    display: flex;
+    min-width: 0;
+    min-height: 62px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #f8fbfc;
+    text-align: left;
+  }
+
+  .journey-step.is-active {
+    border-color: rgba(13, 101, 119, 0.44);
+    background: #eef7f8;
+  }
+
+  .journey-step:focus-visible {
+    outline-offset: 2px;
+  }
+
+  .journey-figure {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .journey-step:hover .journey-figure,
+  .journey-step.is-active .journey-figure {
+    box-shadow: none;
+    transform: none;
+  }
+
+  .journey-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .journey-label {
+    min-width: 0;
+    font-size: 11.5px;
+    letter-spacing: 0.01em;
   }
 
   .journey-detail {
-    padding: 20px;
+    min-height: 0;
+    margin-top: 12px;
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .journey-detail-number {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+  }
+
+  #contact {
+    padding: 68px 0;
+  }
+
+  #contact > div > p {
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  footer {
+    padding: 24px 0;
+  }
+
+  .footer-inner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-link {
+    width: 44px;
+    height: 44px;
   }
 }
 
@@ -1488,22 +1838,14 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .hero-visual {
-    min-height: 330px;
-  }
-
-  .data-field {
-    inset: -8px -34px -2px -22px;
-  }
-
   .journey-detail {
-    grid-template-columns: 1fr;
-    gap: 13px;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
   }
 
   .journey-detail-number {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
   }
 
   .case-dialog {
@@ -1544,8 +1886,8 @@ footer {
   }
 
   .dialog-close {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
   }
 
   .contact-cards {
@@ -1554,6 +1896,105 @@ footer {
 
   .contact-card {
     padding: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .wrap,
+  .nav-inner {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .nav-inner {
+    gap: 8px;
+  }
+
+  .nav-cta {
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 12.5px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.35rem, 13.6vw, 3rem);
+  }
+
+  .eyebrow {
+    white-space: nowrap;
+    font-size: 9.25px;
+    letter-spacing: 0.045em;
+  }
+
+  .process-visual {
+    padding: 12px;
+  }
+
+  .process-journey {
+    gap: 8px;
+  }
+
+  .journey-step {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .journey-figure {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .journey-detail {
+    padding: 16px;
+  }
+
+  .contact-card {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .contact-card-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 300px) {
+  .journey-step {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .journey-figure {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .journey-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .journey-label {
+    font-size: 10.5px;
+  }
+}
+
+@media (hover: none) {
+  .btn-primary:hover,
+  .nav-cta:hover,
+  .skill-card:hover,
+  .proj-card:hover,
+  .analytics-card:hover,
+  .ml-grid .proj-card:hover,
+  .contact-card:hover {
+    transform: none;
+  }
+
+  .journey-step:hover .journey-figure {
+    transform: none;
   }
 }
 
